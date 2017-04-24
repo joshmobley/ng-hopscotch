@@ -1,0 +1,13 @@
+.icon {
+  display: inline-block;
+  text-indent: -9999em;
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &.h {
+    background-image: url('../icons/h.svg');
+  }
+}

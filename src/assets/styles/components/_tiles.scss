@@ -1,0 +1,71 @@
+.tiles {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.tile {
+  border: 10px solid $lightGray;
+  color: $white;
+  box-sizing: border-box;
+  display: flex;
+  background-position: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  min-height: 30vw;
+
+  .tile__content {
+    padding: 2em;
+  }
+
+  h3 {
+    font-size: 2em;
+    font-family: "Larsseit-Bold";
+    margin-bottom: 1em;
+  }
+
+  &--button {
+    justify-content: center;
+    @extend .tile;
+  }
+
+  &--small {
+    background-color: $hopBlue;
+    @extend .tile;
+
+    &:nth-child(even) {
+      background-color: $hopPurple;
+    }
+  }
+
+  &--med {
+    background-color: $hopRed;
+    padding: 2em 8em;
+    @extend .tile;
+
+    [class*="button"] {
+      margin-top: 2em;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .tiles {
+    flex-basis: 33%;
+  }
+
+  .tile {
+    h3 {
+      font-size: 3em;
+    }
+
+    &--small, &--button {
+      width: 33%;
+    }
+
+    &--med {
+      width: 66%;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.site-nav {
+  position: fixed;
+  width: 300px;
+  right: -300px;
+  top: 0;
+  transition: right .5s;
+  background: rgba(0, 0, 0, .8);
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 2em 0;
+  z-index: 9998;
+
+  &.is-visible {
+    right: 0;
+  }
+
+  ul li {
+    a {
+      color: $white;
+      padding: 1em;
+      display: block;
+      transition: color .5s;
+
+      &:hover {
+        color: $hopRed;
+      }
+    }
+
+    &:last-child a {
+      color: $hopBlue;
+    }
+  }
+}
+
+.nav-toggle {
+  text-align: right;
+
+  &.is-fixed {
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    z-index: 9999;
+  }
+
+  a {
+    color: $white;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .site-nav {
+    position: static;
+    height: auto;
+    width: auto;
+    background: none;
+    text-align: right;
+    grid-column: 2 / span 3;
+    padding: 0;
+
+    ul li {
+      display: inline-block;
+
+      a {
+        display: inline-block;
+      }
+
+      &:last-child a {
+        padding: 1em 2em;
+        background: $hopBlue;
+        position: relative;
+        z-index: 0;
+        color: $white;
+
+        span {
+          position: relative;
+          z-index: 5;
+        }
+
+        &::before, &::after {
+          content: '';
+          width: 100%;
+          height: 100%;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: all .3s;
+        }
+
+        &::before {
+          background: $hopRed;
+        }
+
+        &::after {
+          background: $hopBlue;
+        }
+
+        &:hover {
+          color: $white;
+
+          &::before {
+            top: 2px;
+            left: -2px;
+          }
+
+          &::after {
+            opacity: .5;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+}

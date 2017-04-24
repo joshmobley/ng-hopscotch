@@ -1,0 +1,25 @@
+.button {
+  font-family: "Larsseit-Bold";
+  border: 6px solid $hopRed;
+  padding: 1em 1.5em .8em;
+  text-transform: uppercase;
+  display: inline-block;
+  color: $black;
+  cursor: pointer;
+  transition: background .5s;
+
+  &--light {
+    color: $white;
+    @extend .button;
+  }
+
+  &--white {
+    color: $white;
+    border-color: $white;
+    @extend .button;
+  }
+
+  &:hover {
+    background: $hopRed;
+  }
+}

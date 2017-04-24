@@ -1,0 +1,66 @@
+.mailing-list {
+  background: $black;
+  color: $white;
+  padding: 4em;
+  margin-top: 8em;
+  display: flex;
+  justify-content: center;
+
+  p {
+    flex-shrink: 1;
+    flex-grow: 2;
+    align-content: right;
+    max-width: 300px;
+
+    > strong {
+      display: block;
+    }
+  }
+
+  form {
+    position: relative;
+    display: flex;
+    min-width: 600px;
+    flex-shrink: 1;
+    flex-grow: 5;
+    max-width: 500px;
+
+    label {
+      position: absolute;
+      color: $black;
+      font-family: "Larsseit-Bold";
+      top: 1.25em;
+      left: .5em;
+      margin-top: 2px;
+      text-transform: uppercase;
+      transition: all .5s;
+
+      &.is-outside {
+        top: -1.25em;
+        color: $white;
+        font-size: .8em;
+      }
+    }
+
+    [type="email"] {
+      border: none;
+      padding: calc(1em + 4px) .5em;
+      background: $white;
+      font-family: "Larsseit-Bold";
+      font-size: 1em;
+      vertical-align: bottom;
+      text-transform: uppercase;
+      flex: 5;
+    }
+
+    [type="submit"] {
+      margin-left: 2em;
+      background: none;
+      color: $white;
+      font-size: 1em;
+      vertical-align: bottom;
+      flex: 1;
+      @extend .button;
+    }
+  }
+}

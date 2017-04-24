@@ -1,0 +1,77 @@
+.grid__item {
+  &--large, &--med {
+    @extend .grid__item;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
+    &--simple {
+      @extend .grid;
+
+      .grid__item {
+        flex-basis: calc(20% - 2em);
+      }
+    }
+
+    &--between {
+      justify-content: space-between;
+      @extend .grid;
+    }
+
+    &__item {
+      flex-basis: calc(25% - 2em);
+      margin: 1em;
+      box-sizing: border-box;
+      text-align: center;
+
+      h5 {
+        color: $hopRed;
+        font-size: 1.2em;
+        font-family: "Larsseit-Bold";
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      &--large {
+        flex-basis: calc(100% - 2em);
+        text-align: left;
+
+        h5 {
+          font-size: 2em;
+          margin-top: 2em;
+        }
+
+        img {
+          width: 66%;
+          float: left;
+          margin-right: 2em;
+        }
+      }
+
+      &--med {
+        flex-basis: calc(50% - 2em);
+
+        h5 {
+          font-size: 1.6em;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
+      img {
+        max-width: 100%;
+        margin-bottom: 1em;
+      }
+    }
+  }
+}

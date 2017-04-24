@@ -1,0 +1,23 @@
+img {
+  max-width: 100%;
+}
+
+.triplet-image-container {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-color: #333;
+  overflow: hidden;
+
+  .clone {
+    position: relative;
+    background-color: #555;
+  }
+
+  .triplet-image {
+    background-color: #777;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+}
