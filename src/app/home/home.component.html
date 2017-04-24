@@ -1,0 +1,93 @@
+<app-header></app-header>
+
+<div *ngFor="let item of data; let i = index;">
+  <app-banner *ngIf="item.acf_fc_layout === 'banner'" [data]="item"></app-banner>
+  <app-promo *ngIf="item.acf_fc_layout === 'promo'" [data]="item"></app-promo>
+</div>
+
+
+<section class="promo">
+    <img class="triplet-image" src="http://placehold.it/800x800" />
+    <div class="promo__content">
+      <h3>2 Beautiful Days.<br/>42 Inspiring Speakers.<br/>Endless Inspiration.</h3>
+      <p>Breathe.</p>
+      <p>Slow down.</p>
+      <p>Challenge assumptions.</p>
+      <p>Push yourself.</p>
+      <p>Shape the future.</p>
+      <div class="button-container">
+        <a href="#" class="button">Experience</a>
+      </div>
+    </div>
+</section>
+
+<section class="promo--headline">
+    <h2>News</h2>
+    <div class="promo__content">
+      <h3><a href="#">Early Bird Tickets<br />On Sale Now</a></h3>
+      <div class="button-container">
+        <a href="#" class="button">In Other News</a>
+      </div>
+    </div>
+</section>
+
+<section class="promo--grid">
+    <h2>2017 Speakers</h2>
+    <div class="grid--between">
+        <div class="grid__item">
+            <img src="http://placehold.it/300x300" />
+            <h5>Speaker Name</h5>
+            <p>Profession + Company</p>
+        </div>
+        <div class="grid__item">
+            <img src="http://placehold.it/300x300" />
+            <h5>Speaker Name</h5>
+            <p>Profession + Company</p>
+        </div>
+        <div class="grid__item">
+            <img src="http://placehold.it/300x300" />
+            <h5>Speaker Name</h5>
+            <p>Profession + Company</p>
+        </div>
+        <div class="grid__item">
+            <img src="http://placehold.it/300x300" />
+            <h5>Speaker Name</h5>
+            <p>Profession + Company</p>
+        </div>
+    </div>
+    <div class="button-container">
+      <a href="#" class="button">See Full Lineup</a>
+    </div>
+</section>
+
+<section class="promo--right">
+    <img class="triplet-image" src="http://placehold.it/800x800" />
+    <h2>Pricing</h2>
+    <div class="promo__content">
+      <h3>Generate New Insights.<br />Learn New Tools.<br />Discover the Future.</h3>
+      <h4>Register Now</h4>
+      <dl>
+          <dt>Early Bird</dt>
+          <dd>$175</dd>
+          <dt>Regular Price</dt>
+          <dd>$225</dd>
+          <dt>Week Of</dt>
+          <dd>$275</dd>
+      </dl>
+      <div class="button-container">
+        <a href="#" class="button">Buy Your Ticket</a>
+      </div>
+    </div>
+</section>
+
+<section class="promo--grid">
+    <h2>Sponsors</h2>
+    <div class="grid">
+      <a href="#" class="grid__item"><img src="" /></a>
+      <a href="#" class="grid__item"><img src="" /></a>
+    </div>
+    <div class="button-container">
+      <a href="#" class="button">Be a Sponsor</a>
+    </div>
+</section>
+<app-footer></app-footer>

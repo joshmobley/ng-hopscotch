@@ -1,0 +1,16 @@
+<header>
+    <a class="logo" href="{{ path }}/"><i class="icon h">Hopscotch</i> <strong>Design</strong> Festival</a>
+    <nav class="site-nav" v-bind:class="{ 'is-visible': menuOpen }">
+        <ul>
+            <li><a href="{{ path }}/experience">Experience</a></li>
+            <li><a href="{{ path }}/lineup">Lineup</a></li>
+            <li><a href="{{ path }}/news">News</a></li>
+            <li><a href="{{ path }}/travel">Travel</a></li>
+            <li><a href="{{ path }}/contact">Contact</a></li>
+            <li><a href="{{ path }}/tickets"><span>Buy Tickets</span></a></li>
+        </ul>
+    </nav>
+    <span class="nav-toggle" v-bind:class="{ 'is-fixed': menuOpen }">
+      <a href="#site-footer" v-on:click="toggleMenu">Menu</a>
+    </span>
+</header>
