@@ -78,6 +78,7 @@
 
       .quote::after {
         content: '\201D';
+        padding-left: .25em;
       }
 
       span {
@@ -192,16 +193,6 @@
       blockquote {
         font-size: 3em;
         margin-bottom: 1em;
-
-        &::before {
-          position: absolute;
-          left: 0;
-        }
-
-        &::after {
-          position: absolute;
-          right: 0;
-        }
 
         span {
           font-size: .35em;

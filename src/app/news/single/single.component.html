@@ -1,8 +1,7 @@
 <app-header></app-header>
   <div *ngFor="let item of data; let i = index;" class="post">
     <a routerLink="/news" class="back-link">&larr; back to news</a>
-          {{ getImage(i) }}
-      <img src="http://placehold.it/1600x800" class="post__image" />
+      <img *ngIf="item.acf.image" [src]="item.acf.image.sizes['1600']" class="post__image" />
 
     <div class="post__content">
       <div class="post__header">

@@ -13,19 +13,19 @@
 <section class="promo--photo">
   <div class="promo__content">
     <blockquote>
-        <div class="quote">The energy, passion, and enthusiasm that I witnessed has now been rekindled in me.</div> <span>2016 Hopscotcher</span>
+        <div class="quote">{{ quotes[randomInt] }}</div> <span>- 2016 Hopscotcher</span>
     </blockquote>
     <p>Sept 7-8, 2017 <i class="icon line">|</i> Raleigh, NC</p>
     <div class="button-container">
       <a href="#" class="button--light">Buy Tickets</a>
     </div>
   </div>
-  <div class="promo__image" style="background-image:url(http://placehold.it/1600x400)"></div>
+  <div class="promo__image" [ngStyle]="returnImage()"></div>
 </section>
 
 <footer id="site-footer">
   <i class="icon h">Hopscotch</i>
-    <nav class="footer-nav">
+    <!--<nav class="footer-nav">
       <ul>
           <li><a href="{{ path }}/experience">Experience</a></li>
           <li><a href="{{ path }}/lineup">Lineup</a></li>
@@ -34,7 +34,7 @@
           <li><a href="{{ path }}/contact">Contact</a></li>
           <li><a href="{{ path }}/tickets">Buy Tickets</a></li>
       </ul>
-    </nav>
+    </nav>-->
     <p>Produced by New Kind and Hopscotch Music Festival</p>
     <img src="http://placehold.it/300x100" />
     <span>+</span>
