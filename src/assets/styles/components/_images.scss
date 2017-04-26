@@ -13,11 +13,14 @@ img {
     position: relative;
     background-color: #555;
   }
+}
 
-  .triplet-image {
-    background-color: #777;
-    height: 100%;
-    width: 100%;
-    position: relative;
-  }
+.triplet-image {
+  background-color: #777;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-width: 40vw;
+  height: 40vw;
 }

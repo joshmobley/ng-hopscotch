@@ -1,0 +1,14 @@
+<app-header></app-header>
+  <div *ngFor="let speaker of data; let i = index;" class="profile">
+    <a routerLink="/lineup" class="back-link">&larr; back to lineup</a>
+    <div class="profile__content">
+      <div class="profile__header">
+        <h1>{{ speaker.title.rendered }}</h1>
+        <h2>{{ speaker.acf.job_title }} <i class="icon square">-</i> {{ speaker.acf.organization }}</h2>
+      </div>
+      <img [src]="getImage(i)" class="profile__image" />
+      <div [innerHtml]="speaker.acf.bio"></div>
+      <a href="{{ speaker.acf.website }}" class="button" target="_blank">Website</a>
+    </div>
+  </div>
+<app-footer></app-footer>

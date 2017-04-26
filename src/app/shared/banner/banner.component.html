@@ -11,7 +11,7 @@
       <i class="h2">h</i>
     </h1>
     <h2><span>September 7-8, 2017</span> <span>Raleigh, NC</span></h2>
-    <img class="triplet-image" src="{{ data.image }}" />
+    <div class="banner__image" [ngStyle]="getImage()"></div>
     <p [innerHTML]="data.text"></p>
     <div class="button-container">
       <a href="{{ data.button_link }}" class="button--light">{{ data.button_label }}</a>

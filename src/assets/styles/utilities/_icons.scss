@@ -10,4 +10,31 @@
   &.h {
     background-image: url('../icons/h.svg');
   }
+
+  &.square {
+    background: $hopBlue;
+    height: 12px;
+    width: 12px;
+    position: relative;
+    top: .25em;
+    margin: 0 .5em;
+
+    &--small {
+      height: 6px;
+      width: 6px;
+      top: .35em;
+      margin: 0 .25em;
+      background: $black;
+      @extend .square;
+    }
+  }
+
+  &.line {
+    border-left: 1px solid $white;
+    width: 1px;
+    margin: 0 1em;
+    height: 2em;
+    position: relative;
+    top: -.5em;
+  }
 }

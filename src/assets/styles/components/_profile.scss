@@ -1,0 +1,88 @@
+.profile {
+  padding: 4em 2em 0;
+  position: relative;
+
+  &__header {
+    margin-bottom: 2em;
+  }
+
+  &__image {
+    margin-bottom: 2em;
+  }
+
+  &__content {
+    max-width: 800px;
+
+    h1 {
+      color: $hopBlue;
+      font-family: "Larsseit-Bold";
+      margin-bottom: .25em;
+      font-size: 2.5em;
+    }
+
+    h2 {
+      font-family: "Larsseit-Bold";
+      line-height: 1.2em;
+      font-size: 1.2em;
+    }
+
+    p + p {
+      margin-top: 2em;
+    }
+
+    .button {
+      margin-top: 2em;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+
+  .profile {
+    padding: 4em 4em 0;
+
+    &__content {
+      h1 {
+        font-size: 3em;
+      }
+
+      h2 {
+        font-size: 1.6em;
+      }
+    }
+
+    &__image {
+      width: 250px;
+      float: left;
+      margin: 0 2em 2em 0;
+    }
+
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .profile {
+    &__image {
+      position: absolute;
+      left: 4em;
+      top: 4em;
+      width: 400px;
+    }
+
+    &__content {
+      padding-left: calc(400px + 4em);
+    }
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .profile{
+    &__image {
+      width: 500px;
+    }
+
+    &__content {
+      padding-left: calc(500px + 4em);
+    }
+  }
+}

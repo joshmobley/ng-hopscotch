@@ -1,0 +1,28 @@
+<app-header></app-header>
+  <div *ngFor="let item of data; let i = index;" class="post">
+    <a routerLink="/news" class="back-link">&larr; back to news</a>
+          {{ getImage(i) }}
+      <img src="http://placehold.it/1600x800" class="post__image" />
+
+    <div class="post__content">
+      <div class="post__header">
+        <h1>{{ item.title.rendered }}</h1>
+        <p class="post__meta">{{ author.name }} // {{ formatDate(item.date) }}</p>
+      </div>
+      <div [innerHtml]="item.content.rendered"></div>
+      <div>
+        <a href="#" class="button" target="_blank">Buy Tickets</a>
+        <a routerLink="/news" class="button">Back to News</a>
+      </div>
+    </div>
+
+    <div class="post__sidebar">
+      <h2>In Other News</h2>
+
+      <div *ngFor="let post of posts; let i = index;" class="post__sidebar-item">
+        <h3><a [routerLink]="['/news/' + post.slug ]" routerLinkActive="is-active">{{ post.title.rendered }}</a></h3>
+        <p>{{ formatDate(post.date) }}</p>
+      </div><!--__sidebar-item-->
+    </div><!--__sidebar-->
+  </div><!--.post-->
+<app-footer></app-footer>

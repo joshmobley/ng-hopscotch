@@ -1,3 +1,10 @@
-<p>
-  promo works!
-</p>
+<section class="promo" [class.promo--right]="isEvenCount()">
+    <div class="triplet-image" [ngStyle]="getImage()"></div>
+    <div class="promo__content">
+      <h3 [innerHtml]="data.title"></h3>
+      <div [innerHtml]="data.text"></div>
+      <div class="button-container">
+        <a href="{{ data.button_link }}" class="button">{{ data.button_label }}</a>
+      </div>
+    </div>
+</section>

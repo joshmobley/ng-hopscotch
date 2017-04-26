@@ -1,3 +1,42 @@
-<p>
-  lineup works!
-</p>
+<app-header></app-header>
+<h1 class="page-title">Lineup</h1>
+
+<section class="promo--grid">
+  <div class="grid">
+    <!--<div class="grid__item--large">
+        <img src="http://placehold.it/300x300" />
+        <h5>Speaker Name</h5>
+        <p>Profession + Company</p>
+    </div>
+    <div class="grid__item--med">
+        <img src="http://placehold.it/300x300" />
+        <h5>Speaker Name</h5>
+        <p>Profession + Company</p>
+    </div>
+    <div class="grid__item--med">
+        <img src="http://placehold.it/300x300" />
+        <h5>Speaker Name</h5>
+        <p>Profession + Company</p>
+    </div>-->
+    <a *ngFor="let item of data; let i = index;" [routerLink]="['/lineup/' + item.slug]" class="grid__item">
+        <div class="grid__image-container">
+          <img class="grid__image" [src]="getImage(i)" />
+          <img class="grid__image--hover" [src]="getHoverImage(i)" />
+        </div>
+        <h5>{{ item.title.rendered }}</h5>
+        <p>{{ item.acf.job_title }} <i class="icon square--small">-</i> {{ item.acf.organization }}</p>
+    </a>
+  </div>
+</section>
+<!--
+<h2 class="page-title">Past Speakers</h2>
+
+<section class="promo--grid">
+  <div class="grid--simple">
+    <div class="grid__item">
+        <h5>Speaker Name</h5>
+    </div>
+  </div>
+</section>
+-->
+<app-footer></app-footer>

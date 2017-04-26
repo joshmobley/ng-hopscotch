@@ -39,6 +39,7 @@
         width: 200px;
         margin-bottom: -100px;
         transform-origin: top left;
+        font-family: "Larsseit-Bold";
       }
     }
 
@@ -83,10 +84,13 @@
       }
     }
 
-    .triplet-image {
+    &__image {
       grid-column: 4 / span 6;
       grid-row: 1 / span 5;
       z-index: -1;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 }

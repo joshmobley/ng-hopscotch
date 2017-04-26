@@ -1,19 +1,82 @@
+.grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  &--simple {
+    @extend .grid;
+  }
+
+  &--between {
+    @extend .grid;
+  }
+
+  &__item {
+    margin: 1em;
+    box-sizing: border-box;
+    text-align: center;
+    flex-basis: calc(50% - 2em);
+
+    h5 {
+      color: $hopRed;
+      font-size: 1.2em;
+      font-family: "Larsseit-Bold";
+    }
+
+    p {
+      font-size: 1em;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__image-container {
+    position: relative;
+    margin-bottom: 1em;
+  }
+
+  &__image {
+    &--hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity .5s;
+    }
+  }
+}
+
 .grid__item {
   &--large, &--med {
     @extend .grid__item;
   }
+
+  &:hover {
+    .grid__image--hover {
+      opacity: 1;
+    }
+  }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 600px) {
   .grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    box-sizing: border-box;
+    &__item {
+      flex-basis: calc(33% - 2em);
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .grid {
+
+    &__item{
+      flex-basis: calc(25% - 2em);
+    }
 
     &--simple {
-      @extend .grid;
-
       .grid__item {
         flex-basis: calc(20% - 2em);
       }
@@ -21,24 +84,11 @@
 
     &--between {
       justify-content: space-between;
-      @extend .grid;
     }
 
+
+
     &__item {
-      flex-basis: calc(25% - 2em);
-      margin: 1em;
-      box-sizing: border-box;
-      text-align: center;
-
-      h5 {
-        color: $hopRed;
-        font-size: 1.2em;
-        font-family: "Larsseit-Bold";
-      }
-
-      p {
-        font-size: 1em;
-      }
 
       &--large {
         flex-basis: calc(100% - 2em);

@@ -10,10 +10,13 @@
   box-sizing: border-box;
   display: flex;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   min-height: 30vw;
+  flex-basis: 100%;
 
   .tile__content {
     padding: 2em;
@@ -41,12 +44,17 @@
 
   &--med {
     background-color: $hopRed;
-    padding: 2em 8em;
     @extend .tile;
 
     [class*="button"] {
       margin-top: 2em;
     }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .tile {
+    flex-basis: 50%;
   }
 }
 
@@ -61,11 +69,12 @@
     }
 
     &--small, &--button {
-      width: 33%;
+      flex-basis: 33%;
     }
 
     &--med {
-      width: 66%;
+      flex-basis: 66%;
+      padding: 2em 8em;
     }
   }
 }

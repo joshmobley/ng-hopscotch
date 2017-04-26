@@ -1,0 +1,13 @@
+<section class="promo--grid">
+    <h2>{{ data.header }}</h2>
+    <div class="grid--between">
+        <div *ngFor="let item of data.speakers" class="grid__item">
+            <img [src]="getPhoto(item.speaker.post_name)" />
+            <h5>{{ item.speaker.post_title }}</h5>
+            <p>{{ item.speaker}} + Company</p>
+        </div>
+    </div>
+    <div class="button-container">
+      <a href="{{ data.button_link }}" class="button">{{ data.button_label }}</a>
+    </div>
+</section>

@@ -3,9 +3,12 @@
 <div *ngFor="let item of data; let i = index;">
   <app-banner *ngIf="item.acf_fc_layout === 'banner'" [data]="item"></app-banner>
   <app-promo *ngIf="item.acf_fc_layout === 'promo'" [data]="item"></app-promo>
+  <app-lineup *ngIf="item.acf_fc_layout === 'lineup'" [data]="item"></app-lineup>
+  <app-headline *ngIf="item.acf_fc_layout === 'headline'" [data]="item"></app-headline>
+  <app-sponsors *ngIf="item.acf_fc_layout === 'sponsors'" [data]="item"></app-sponsors>
 </div>
 
-
+<!--
 <section class="promo">
     <img class="triplet-image" src="http://placehold.it/800x800" />
     <div class="promo__content">
@@ -90,4 +93,5 @@
       <a href="#" class="button">Be a Sponsor</a>
     </div>
 </section>
+-->
 <app-footer></app-footer>

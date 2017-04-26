@@ -4,6 +4,19 @@
     font-size: 2em;
   }
 
+  h4 {
+    font-size: 1.4em;
+    font-family: "Larsseit-Bold";
+  }
+
+  dl {
+    font-size: 1.2em;
+  }
+
+  .button-container {
+    margin-top: 2em;
+  }
+
   &--right {
     @extend .promo;
   }
@@ -13,9 +26,10 @@
 
     h3 a {
       color: $hopPurple;
+      transition: color .5s;
 
       &:hover {
-        color: linear-gradient(45deg, $hopRed, $hopBlue);
+        color: $hopRed;
       }
     }
   }
@@ -29,7 +43,63 @@
   }
 
   &--photo {
+    background-color: $hopBlue;
+    color: $white;
+    margin: 0;
+    padding: 4em 2em 400px;
+    position: relative;
+    text-align: center;
     @extend .promo--headline;
+
+    &::after {
+      content: '';
+      height: 400px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient( 180deg, $hopBlue, transparent);
+    }
+
+    blockquote {
+      font-family: "Larsseit-Bold";
+      font-size: 1.6em;
+      line-height: 1.2em;
+      max-width: 1000px;
+      margin: 0 auto 2em;
+      position: relative;
+      text-align: left;
+
+      .quote::before {
+        content: '\201C';
+        margin-left: -.6em;
+        padding-right: .25em;
+      }
+
+      .quote::after {
+        content: '\201D';
+      }
+
+      span {
+        display: block;
+        font-size: .6em;
+        text-align: right;
+        margin-right: 2em;
+        line-height: 1.2em;
+      }
+    }
+
+    .promo__image {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 400px;
+      display: block;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
   }
 }
 
@@ -58,10 +128,6 @@
       font-size: 2.8em;
       font-family: "Larsseit-Bold";
       margin-bottom: 1em;
-    }
-
-    .button-container {
-      margin-top: 2em;
     }
 
     .triplet-image-container, .triplet-image {
@@ -120,22 +186,30 @@
     }
 
     &--photo {
-      background-color: $hopBlue;
-      color: $white;
+      padding: 4em 2em 400px;
       margin: 0;
-      padding: 8em 0 400px;
-      position: relative;
 
-      .promo__image {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 400px;
-        display: block;
-        background-position: top center;
-        background-repeat: no-repeat;
-        background-size: cover;
+      blockquote {
+        font-size: 3em;
+        margin-bottom: 1em;
+
+        &::before {
+          position: absolute;
+          left: 0;
+        }
+
+        &::after {
+          position: absolute;
+          right: 0;
+        }
+
+        span {
+          font-size: .35em;
+        }
+      }
+
+      .promo__content p {
+        font-size: 1.4em;
       }
     }
   }

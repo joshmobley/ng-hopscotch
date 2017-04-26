@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<div *ngFor="let post of data; let i = index;">
+
+  <section class="promo--video">
+    <div class="promo__content">
+      <i href="#" class="icon eye">Play</i>
+      <h3>See the Experience</h3>
+    </div>
+  </section>
+
+  <section class="tiles">
+
+    <div *ngFor="let tile of data[0].acf.experience; let i = index;" [class]="getClasses(i)" [ngStyle]="getImage(i)">
+      <div class="tile__content">
+        <h3 *ngIf="tile.title && !tile.image">{{ tile.title }}</h3>
+        <div *ngIf="tile.text && !tile.image" [innerHtml]="tile.text"></div>
+        <div *ngIf="tile.button_label" [innerHtml]="getButton(i)"></div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <section class="promo--headline">
+    <div class="promo__content">
+      <h3><a href="#">More to Come...</a></h3>
+      <div class="button-container">
+        <a href="#" class="button">In Other News</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<app-footer></app-footer>

@@ -1,3 +1,17 @@
-<p>
-  news works!
-</p>
+<app-header></app-header>
+<h1 class="page-title--floating">News</h1>
+
+<section class="news-list">
+
+  <div class="news-list__item--featured">
+    <h3><a href="#">Primary News Headline</a></h3>
+  </div>
+
+  <div *ngFor="let item of data; let i = index;" class="news-list__item">
+    <p class="date">{{ formatDate(item.date) }}</p>
+    <h3><a [routerLink]="['/news/' + item.slug ]">{{ item.title.rendered }}</a></h3>
+    <p [innerHtml]="item.excerpt.rendered"></p>
+  </div>
+
+</section>
+<app-footer></app-footer>

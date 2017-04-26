@@ -1,66 +1,110 @@
 .mailing-list {
-  background: $black;
-  color: $white;
-  padding: 4em;
-  margin-top: 8em;
-  display: flex;
-  justify-content: center;
+    background: $black;
+    color: $white;
+    padding: 4em 2em;
+    display: flex;
+    clear: both;
+    justify-content: center;
+    margin-top: 4em;
+    flex-direction: column;
 
-  p {
-    flex-shrink: 1;
-    flex-grow: 2;
-    align-content: right;
-    max-width: 300px;
-
-    > strong {
-      display: block;
-    }
+  p > strong {
+    display: block;
   }
 
   form {
+    margin-top: 2em;
+    flex-direction: column;
     position: relative;
     display: flex;
-    min-width: 600px;
-    flex-shrink: 1;
-    flex-grow: 5;
     max-width: 500px;
 
-    label {
-      position: absolute;
-      color: $black;
-      font-family: "Larsseit-Bold";
-      top: 1.25em;
-      left: .5em;
-      margin-top: 2px;
-      text-transform: uppercase;
-      transition: all .5s;
 
-      &.is-outside {
-        top: -1.25em;
-        color: $white;
-        font-size: .8em;
+
+      label {
+        position: absolute;
+        color: $black;
+        font-family: "Larsseit-Bold";
+        top: 1.25em;
+        left: .5em;
+        margin-top: 2px;
+        text-transform: uppercase;
+        transition: all .5s;
+
+        &.is-outside {
+          top: -1.25em;
+          color: $white;
+          font-size: .8em;
+        }
       }
+  }
+
+
+
+      [type="email"] {
+        border: none;
+        padding: calc(1em + 4px) .5em;
+        background: $white;
+        font-family: "Larsseit-Bold";
+        font-size: 1em;
+        vertical-align: bottom;
+        text-transform: uppercase;
+        flex: 1;
+      }
+
+
+  [type="submit"] {
+    margin-top: 2em;
+    background: none;
+    color: $white;
+    font-size: 1em;
+    vertical-align: bottom;
+    flex: 1;
+    @extend .button;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .mailing-list {
+    flex-direction: row;
+
+    p {
+      flex-shrink: 1;
+      flex-grow: 2;
+      align-content: right;
+      max-width: 300px;
     }
 
-    [type="email"] {
-      border: none;
-      padding: calc(1em + 4px) .5em;
-      background: $white;
-      font-family: "Larsseit-Bold";
-      font-size: 1em;
-      vertical-align: bottom;
-      text-transform: uppercase;
-      flex: 5;
+    form {
+
+      margin: 0;
+      flex-shrink: 1;
+      flex-grow: 2;
+      max-width: 500px;
     }
 
-    [type="submit"] {
-      margin-left: 2em;
-      background: none;
-      color: $white;
-      font-size: 1em;
-      vertical-align: bottom;
-      flex: 1;
-      @extend .button;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+
+  .mailing-list {
+    padding: 4em;
+    margin-top: 8em;
+
+    form {
+      flex-direction: row;
+      min-width: 600px;
+
+      [type="email"] {
+        flex: 5;
+      }
+
+      [type="submit"] {
+        margin-top: 0;
+        margin-left: 2em;
+        flex: 1;
+      }
     }
   }
 }
